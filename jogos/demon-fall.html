@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Demon Fall - Roblox Codes</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Só nos Codiguim</h1>
+
+        <nav>
+            <a href="../index.html">Início</a>
+            <a href="#">Jogos</a>
+            <a href="#">Códigos</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>DEMON FALL</h2>
+
+        <h2>Códigos disponíveis para Demon Fall:</h2>
+
+        <section class="codes-list">
+
+            <div class="code-card">
+                <div>
+                    <h3>UPDATE6</h3>
+                    <p>Recompensa: 5 Wipe potion, 5 Muzan blood, 5 Breath indict</p>
+                </div>
+
+                <button onclick="copiarCodigo('UPDATE6', this)">
+                    Copiar
+                </button>
+            </div>
+
+            
+
+        </section>
+
+        <a href="../index.html" class="back-button">
+            ← Voltar para os jogos
+        </a>
+
+    </main>
+
+    <footer>
+        <p>Roblox Codes © 2026</p>
+    </footer>
+
+    <script>
+        function copiarCodigo(codigo, botao) {
+            navigator.clipboard.writeText(codigo);
+
+            botao.textContent = "✓ Copiado!";
+
+            setTimeout(function() {
+                botao.textContent = "Copiar";
+            }, 2000);
+        }
+    </script>
+
+</body>
+
+</html>

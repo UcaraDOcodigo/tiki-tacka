@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Só nos Codiguim</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Só nos Codiguim</h1>
+
+        <nav>
+    <a href="index.html">Início</a>
+    <a href="#jogos">Jogos</a>
+    <a href="codigos.html">Códigos</a>
+</nav>
+    </header>
+
+
+    <main>
+
+        <!-- APRESENTAÇÃO E PESQUISA -->
+
+        <section class="hero">
+
+    <h2>🎮 Códigos de jogos do Roblox</h2>
+
+    <p>
+        Códigos que você procura em um só lugar.
+    </p>
+
+    <input
+        type="text"
+        id="pesquisa"
+        placeholder="🔎 Pesquisar jogos..."
+    >
+
+</section>
+
+
+        <!-- JOGOS -->
+
+        <section id="jogos" class="popular">
+
+    <h2 id="titulo-jogos">🔥 Jogos populares</h2>
+
+    <p id="descricao-jogos">
+        Confira os jogos que já possuem códigos disponíveis.
+    </p>
+
+    <div class="games">
+
+
+                <!-- KING LEGACY -->
+
+                <article data-jogo="king-legacy">
+
+    <img
+        src="images/king-legacy.png"
+        alt="King Legacy"
+    >
+
+    <h3>King Legacy</h3>
+
+    <p>Códigos disponíveis</p>
+
+    <a href="jogos/king-legacy.html">
+        Ver códigos
+    </a>
+
+</article>
+
+
+                <!-- BLOX FRUITS -->
+
+                <article data-jogo="blox-fruits">
+
+    <img
+        src="images/blox-fruits.png"
+        alt="Blox Fruits"
+    >
+
+    <h3>Blox Fruits</h3>
+
+    <p>Códigos disponíveis</p>
+
+    <a href="jogos/blox-fruits.html">
+        Ver códigos
+    </a>
+
+</article>
+
+
+                <!-- DEMON FALL -->
+
+                <article data-jogo="demon-fall">
+
+    <img
+        src="images/demon-fall.png"
+        alt="Demon Fall"
+    >
+
+    <h3>Demon Fall</h3>
+
+    <p>Códigos disponíveis</p>
+
+    <a href="jogos/demon-fall.html">
+        Ver códigos
+    </a>
+
+</article>
+
+
+                <!-- ANIME FIGHTING SIMULATOR -->
+
+                <article data-jogo="anime-fighting-simulator">
+
+    <img
+        src="images/anime-fighting-simulator.png"
+        alt="Anime Fighting Simulator"
+    >
+
+    <h3>Anime Fighting Simulator</h3>
+
+    <p>Códigos disponíveis</p>
+
+    <a href="jogos/anime-fighting-simulator.html">
+        Ver códigos
+    </a>
+
+</article>
+
+<!-- IRON SOUL -->
+
+<article data-jogo="iron-soul">
+
+    <img src="images/iron-soul.png" alt="Iron Soul: Dungeon">
+
+    <h3>Iron Soul: Dungeon</h3>
+
+    <p>Códigos disponíveis</p>
+
+    <a href="./jogos/iron-soul.html">Ver códigos</a>
+
+</article>
+
+
+<!-- SURVIVE THE APOCALYPSE -->
+
+<article data-jogo="survive-the-apocalypse">
+
+    <img
+        src="images/survive-the-apocalypse.png"
+        alt="Survive the Apocalypse"
+    >
+
+    <h3>Survive the Apocalypse</h3>
+
+    <p>Códigos disponíveis</p>
+
+    <a href="./jogos/survive-the-apocalypse.html">Ver códigos</a>
+
+</article>
+
+<article data-jogo="grand-blue">
+
+    <img src="images/grand-blue.png" alt="Grand Blue">
+
+    <h3>Grand Blue</h3>
+
+    <p>Códigos disponíveis</p>
+
+    <a href="./jogos/grand-blue.html">Ver códigos</a>
+
+</article>
+
+<article data-jogo="anime-expeditions">
+
+    <img src="images/anime-expeditions.png" alt="Anime Expeditions">
+
+    <h3>Anime Expeditions</h3>
+
+    <p>Códigos disponíveis</p>
+
+    <a href="./jogos/anime-expeditions.html">Ver códigos</a>
+
+</article>
+
+
+            </div>
+
+            <p id="nenhum-resultado" style="display: none;">
+    😕 Nenhum jogo encontrado.
+</p>
+
+
+        <!-- SOBRE O SITE -->
+
+        <section class="about">
+
+            <h2>📌 Sobre o Só nos Codiguim</h2>
+
+            <p>
+                Encontre códigos de recompensa para seus jogos favoritos
+                do Roblox e mais.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>Só nos Codiguim © 2026</p>
+
+    </footer>
+
+<script>
+
+const pesquisa = document.getElementById("pesquisa");
+const jogos = document.querySelectorAll(".games article");
+const nenhumResultado = document.getElementById("nenhum-resultado");
+
+const tituloJogos = document.getElementById("titulo-jogos");
+const descricaoJogos = document.getElementById("descricao-jogos");
+const sobre = document.querySelector(".about");
+
+pesquisa.addEventListener("input", function() {
+
+    const texto = pesquisa.value.toLowerCase().trim();
+    let encontrou = false;
+
+    jogos.forEach(function(jogo) {
+
+        const nome = jogo.querySelector("h3").textContent.toLowerCase();
+
+        if (nome.includes(texto)) {
+
+            jogo.style.display = "flex";
+            encontrou = true;
+
+        } else {
+
+            jogo.style.display = "none";
+
+        }
+
+    });
+
+    // Quando não está pesquisando
+    if (texto === "") {
+
+        tituloJogos.style.display = "block";
+        descricaoJogos.style.display = "block";
+        nenhumResultado.style.display = "none";
+
+    }
+
+    // Quando encontrou algum jogo
+    else if (encontrou) {
+
+        tituloJogos.style.display = "block";
+        descricaoJogos.style.display = "block";
+        nenhumResultado.style.display = "none";
+
+    }
+
+    // Quando não encontrou nenhum jogo
+    else {
+
+        tituloJogos.style.display = "none";
+        descricaoJogos.style.display = "none";
+        nenhumResultado.style.display = "block";
+        sobre.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
